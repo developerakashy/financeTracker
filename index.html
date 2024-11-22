@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance</title>
+    <link rel="stylesheet" href="./index.css">
+    <script defer src="./index.js"></script>
+</head>
+<body>
+
+    <section>
+        <p class="error">
+            Please provide amount
+        </p>
+        <h1>Finance</h1>
+        <section class="input-container">
+            <div class="input-box">
+                <input id="transaction-name" type="text" placeholder="transaction name" required>
+                <input id="transaction-amount" type="number" placeholder="enter amount" required>
+            </div>
+            <div class="submit-box">
+                <button type="submit" id="cash-in">+ Cash In</button>
+                <button id="cash-out">- Cash Out</button>
+            </div>
+        </section>
+
+
+        <section class="total-container">
+            <div class="total-cash-in total-info">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="green" xmlns="http://www.w3.org/2000/svg"><path d="M5 11V7H1C0.734784 7 0.480505 6.89457 0.292969 6.70703C0.105432 6.5195 0 6.26522 0 6C0 5.73478 0.105432 5.4805 0.292969 5.29297C0.480505 5.10543 0.734784 5 1 5H5V1C5 0.734784 5.10543 0.480505 5.29297 0.292969C5.4805 0.105432 5.73478 0 6 0C6.26522 0 6.5195 0.105432 6.70703 0.292969C6.89457 0.480505 7 0.734784 7 1V5H11C11.2652 5 11.5195 5.10543 11.707 5.29297C11.8946 5.4805 12 5.73478 12 6C12 6.26522 11.8946 6.5195 11.707 6.70703C11.5195 6.89457 11.2652 7 11 7H7V11C7 11.2652 6.89457 11.5195 6.70703 11.707C6.5195 11.8946 6.26522 12 6 12C5.73478 12 5.4805 11.8946 5.29297 11.707C5.10543 11.5195 5 11.2652 5 11Z"></path></svg>
+
+                <div>
+                    <p>Cash In</p>
+                    <p id="total-cash-in">41,75,000</p>
+                </div>
+            </div>
+
+            <div class="total-cash-out total-info">
+                <svg width="12" height="12" viewBox="0 0 12 2" fill="red" xmlns="http://www.w3.org/2000/svg"><path d="M12 1C12 1.26522 11.8946 1.51949 11.707 1.70703C11.5195 1.89457 11.2652 2 11 2H1C0.734784 2 0.480505 1.89457 0.292969 1.70703C0.105432 1.51949 0 1.26522 0 1C0 0.734784 0.105432 0.480505 0.292969 0.292969C0.480505 0.105432 0.734784 0 1 0H11C11.2652 0 11.5195 0.105432 11.707 0.292969C11.8946 0.480505 12 0.734784 12 1Z"></path></svg>
+                <div>
+                    <p>Cash Out</p>
+                    <p id="total-cash-out">41,75,000</p>
+                </div>
+            </div>
+
+            <div class="total-net-amount total-info">
+                <svg width="12" height="12" viewBox="0 0 12 7" fill="blue" xmlns="http://www.w3.org/2000/svg"><path d="M12 1C12 1.26522 11.8946 1.51949 11.707 1.70703C11.5195 1.89457 11.2652 2 11 2H1C0.734784 2 0.480505 1.89457 0.292969 1.70703C0.105432 1.51949 0 1.26522 0 1C0 0.734784 0.105432 0.480505 0.292969 0.292969C0.480505 0.105432 0.734784 0 1 0H11C11.2652 0 11.5195 0.105432 11.707 0.292969C11.8946 0.480505 12 0.734784 12 1Z"></path><path d="M12 6C12 6.26522 11.8946 6.51949 11.707 6.70703C11.5195 6.89457 11.2652 7 11 7H1C0.734784 7 0.480505 6.89457 0.292969 6.70703C0.105432 6.51949 0 6.26522 0 6C0 5.73478 0.105432 5.48051 0.292969 5.29297C0.480505 5.10543 0.734784 5 1 5H11C11.2652 5 11.5195 5.10543 11.707 5.29297C11.8946 5.48051 12 5.73478 12 6Z"></path></svg>
+                <div>
+                    <p>Net Balance</p>
+                    <p id="total-net-balance">0</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="table">
+            <div class="head">
+                <p>Sr No.</p>
+                <p>Transaction</p>
+                <p>Amount</p>
+                <p>Balance</p>
+                <p></p>
+            </div>
+            <ul class="transaction-list">
+                <li class="transaction-view">
+                    <p>1</p>
+                    <p>Python</p>
+                    <p>$200</p>
+                    <p>-$100</p>
+                    <div>
+                        <button>Delete</button>
+                    </div>
+                </li>
+
+                <li class="transaction-view">
+                    <p>2</p>
+                    <p>kkython</p>
+                    <p>$500</p>
+                    <p>-$100</p>
+                    <div>
+                        <button>Delete</button>
+                    </div>
+                </li>
+            </ul>
+
+        </section>
+    </section>
+</body>
+</html>

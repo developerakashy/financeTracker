@@ -1,0 +1,329 @@
+body{
+    font-family: sans-serif;
+    margin: 0%;
+
+    font-family: dmsans-regular;
+}
+
+@font-face {
+    font-family: dmsans;
+    src: url(./fonts/static/DMSans-Medium.ttf);
+}
+
+@font-face {
+    font-family: dmsans-regular;
+    src: url(./fonts/static/DMSans-Regular.ttf);
+}
+
+.hidden{
+    display: none;
+}
+
+.error{
+    position: absolute;
+    margin: 0%;
+    top: 8px;
+    right: 15px;
+    border: 1px solid;
+    padding: 1rem;
+    background-color: rgb(255, 98, 98);
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    display: none;
+    animation: error-in 0.5s ease, error-out 0.5s 2s ease;
+}
+
+@keyframes error-in {
+    0%{
+        right: -250px;
+        display: block;
+    }
+    100%{
+        right: 15px;
+        display: block;
+    }
+}
+
+@keyframes error-out {
+    0%{
+        right: 15px;
+        display: block;
+    }
+    100%{
+        right: -250px;
+        display: block;
+    }
+}
+
+h1{
+    font-size: 2rem;
+    margin: 0%;
+    padding: 1rem;
+}
+
+.input-container{
+    padding: 0 1rem;
+    display: flex;
+    gap: 1rem;
+    /* justify-content: space-between; */
+}
+
+.input-box > input{
+    width: 300px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid gainsboro;
+}
+
+.submit-box > button{
+    background: none;
+    border: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    width: 120px;
+    cursor: pointer;
+    font-weight: 600;
+    /* color: rgb(76, 76, 76); */
+}
+
+#cash-in{
+    background-color: rgb(184, 255, 184);
+    margin-right: 0.5rem;
+}
+
+
+
+#cash-in:hover{
+    background-color: rgb(153, 255, 153);
+}
+
+#cash-out{
+    background-color: rgb(255, 167, 167);
+}
+
+#cash-out:hover{
+    background-color: rgb(255, 140, 140);
+}
+
+.total-container{
+    border: 1px solid gainsboro;
+    margin: 1rem;
+    display: flex;
+    padding: 1rem 0;
+    border-radius: 5px;
+    overflow-x: scroll;
+}
+
+.total-container > div{
+    width: 33%;
+    padding: 0 1.5rem;
+    min-width: 200px;
+
+
+}
+
+.total-info{
+    display: flex;
+
+}
+
+.total-info > div{
+    /* border: 1px solid; */
+    margin-left: 0.8rem;
+}
+
+.total-info  p:nth-child(1){
+    margin: 0%;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.total-info  p:nth-child(2){
+    margin: 0%;
+    margin-top: 0.4rem;
+    font-size: 1.6rem;
+}
+
+.total-info > svg{
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.total-cash-out, .total-net-amount{
+    border-left: 1px solid gainsboro;
+}
+
+.total-cash-in > svg{
+    background-color: rgba(190, 255, 190, 0.4);
+}
+
+.total-cash-out > svg{
+    background-color: rgba(255, 201, 201, 0.4);
+}
+
+.total-net-amount > svg{
+    background-color: rgba(200, 200, 255, 0.402);
+}
+
+.table{
+    border: 1px solid gainsboro;
+    margin: 1rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    height: 500px;
+    overflow: scroll;
+    /* scrollbar-width: none; */
+}
+
+.head{
+    /* width: max-content; */
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    border-radius: 5px;
+    display: flex;
+    background-color: #f6f7fd;;
+}
+
+.head > p{
+    /* border: 1px solid; */
+    margin: 0%;
+    padding:1rem;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    letter-spacing: 0px;
+    min-width: 150px;
+}
+
+.head > p:nth-child(1){
+    width: 10%;
+    min-width: 50px;
+}
+
+.head > p:nth-child(2){
+    width: 30%;
+}
+
+.head > p:nth-child(3){
+    width: 20%;
+}
+
+.head > p:nth-child(4){
+    width: 20%;
+}
+
+.head > p:nth-child(5){
+    width: 20%;
+}
+
+ul{
+    padding: 0%;
+    margin: 0%;
+    list-style: none;
+}
+
+.transaction-view{
+    display: flex;
+}
+
+.transaction-view > *{
+    margin: 0%;
+    color: rgb(30, 30, 30);
+    padding: 0.75rem 1rem;
+    letter-spacing: 0.4px;
+    border-bottom: 1px solid #ebebeb;
+    font-family: dmsans;
+    min-width: 150px;
+}
+
+.text-red{
+    color: red;
+}
+
+.text-green{
+    color: green;
+}
+
+.transaction-view > p:nth-child(1){
+    width: 10%;
+    min-width: 50px;
+    color: rgb(59, 61, 57);
+}
+
+.transaction-view > p:nth-child(2){
+    width: 30%;
+    color: rgb(59, 61, 57);
+}
+
+.transaction-view > p:nth-child(3){
+    width: 20%;
+}
+
+.transaction-view > p:nth-child(4){
+    width: 20%;
+}
+
+.transaction-view > div:nth-child(5){
+    width: 20%;
+}
+
+.transaction-view > div > button{
+    border: none;
+    background: none;
+    padding: 0.2rem 0.5rem ;
+    border-radius: 5px;
+    background-color:rgb(255, 203, 203);
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+
+}
+
+.transaction-view > div > button:hover{
+    background-color: rgb(255, 98, 98);
+    color: white;
+}
+
+
+@media (width < 940px){
+    #transaction-amount{
+        margin-top: 1rem;
+    }
+
+    #cash-out{
+        margin-top: 1rem;
+    }
+
+
+}
+
+@media (width < 860px) {
+    .head{
+        width: max-content;
+    }
+
+
+
+}
+
+@media (width < 500px) {
+    .input-container{
+        display: flex;
+        flex-direction: column;
+        margin-top: 0%;
+    }
+
+    .input-box > input{
+        width: 94.5%;
+    }
+
+
+
+    .submit-box > button{
+        width: 48%;
+    }
+}
