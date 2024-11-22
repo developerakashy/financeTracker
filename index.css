@@ -1,7 +1,7 @@
 body{
     font-family: sans-serif;
     margin: 0%;
-
+    overflow-x: hidden;
     font-family: dmsans-regular;
 }
 
@@ -22,37 +22,45 @@ body{
 .error{
     position: absolute;
     margin: 0%;
-    top: 8px;
-    right: 15px;
-    border: 1px solid;
-    padding: 1rem;
-    background-color: rgb(255, 98, 98);
-    color: white;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.75rem 1.2rem;
+    background-color: rgb(255, 227, 227);
     font-weight: 600;
+    transform: translateX(calc(100% + 30px));
+    overflow: hidden;
     border-radius: 5px;
-    display: none;
-    animation: error-in 0.5s ease, error-out 0.5s 2s ease;
+    transition: transform .5s ease;
 }
 
-@keyframes error-in {
-    0%{
-        right: -250px;
-        display: block;
-    }
-    100%{
-        right: 15px;
-        display: block;
-    }
+.error::before{
+    content: "";
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    right: 1rem;
+    background-color: rgb(246, 86, 86);
+    height: 4px;
+    width: 100%;
+    opacity: 0;
 }
 
-@keyframes error-out {
+
+.active{
+    transform: translateX(0px);
+}
+
+.active.error::before{
+    animation: progress 5s ease-in-out;
+}
+
+@keyframes progress {
     0%{
-        right: 15px;
-        display: block;
+        opacity: 1;
     }
     100%{
-        right: -250px;
-        display: block;
+        width: 0;
+        opacity: 1;
     }
 }
 

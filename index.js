@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalNetBalancePara = document.querySelector('#total-net-balance')
     const submitBtn = document.querySelector('.submit-box')
     const transactionList = document.querySelector('.transaction-list')
+    const errorMsg = document.querySelector('.error')
+    let errorTimeout = 0
 
     let transactions = JSON.parse(localStorage.getItem('transactions')) || []
     let totalCashIn = 0
@@ -14,13 +16,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateTransaction()
 
+
+
     submitBtn.addEventListener('click', (e) => {
         e.preventDefault()
+        console.log(errorTimeout)
 
         let nameValue = transactionName.value.trim()
         let amountValue = Number(transactionAmount.value)
 
-        if(nameValue == '' || isNaN(amountValue)){
+        if(nameValue == '' || isNaN(amountValue) || amountValue <= 0){
+            if(nameValue == ''){
+                errorMsg.textContent = 'invalid transaction name.'
+
+            }else{
+
+                if(amountValue < 0){
+                    errorMsg.textContent = 'amount cannot be negative'
+                }else{
+
+                    errorMsg.textContent = 'invalid transaction amount.'
+                }
+            }
+
+            if(errorTimeout > 0){
+                clearTimeout(errorTimeout)
+                errorMsg.classList.remove('active')
+            }
+
+            setTimeout(() => {
+
+                errorMsg.classList.add('active')
+                errorTimeout = setTimeout(() => {
+                    errorMsg.classList.remove('active')
+                    errorTimeout = 0
+                }, 5000)
+
+            }, 250)
+
             return
         }
 
