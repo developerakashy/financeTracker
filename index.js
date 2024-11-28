@@ -20,23 +20,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     submitBtn.addEventListener('click', (e) => {
         e.preventDefault()
-        console.log(errorTimeout)
+
 
         let nameValue = transactionName.value.trim()
         let amountValue = Number(transactionAmount.value)
 
         if(nameValue == '' || isNaN(amountValue) || amountValue <= 0){
             if(nameValue == ''){
-                errorMsg.textContent = 'invalid transaction name.'
+                errorMsg.textContent = 'Invalid transaction name.'
+
+            }
+            else if(amountValue < 0){
+                errorMsg.textContent = 'Amount cannot be negative'
 
             }else{
-
-                if(amountValue < 0){
-                    errorMsg.textContent = 'amount cannot be negative'
-                }else{
-
-                    errorMsg.textContent = 'invalid transaction amount.'
-                }
+                errorMsg.textContent = 'Invalid transaction amount.'
             }
 
             if(errorTimeout > 0){
@@ -47,12 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
 
                 errorMsg.classList.add('active')
+                
                 errorTimeout = setTimeout(() => {
                     errorMsg.classList.remove('active')
                     errorTimeout = 0
                 }, 5000)
 
-            }, 250)
+            }, 100)
 
             return
         }
